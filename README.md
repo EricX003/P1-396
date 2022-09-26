@@ -15,3 +15,7 @@ Ensure that you are in the directory housing the P1-396 folder (do not enter the
 Run `cd .\P1-396\P1_396\` (for Non-Windows systems, change the slashes accordingly).
 
 You can then run `python manage.py runserver` to start the server, then click on the link to access the website.
+
+The default admin user is:
+Username: Admin
+Password: adminpassword
