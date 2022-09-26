@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+
+	<title>SIGNUP</title>
+</head>
+
+<body>
+	<form action="" method="POST" class="form-horizontal">
+		{% csrf_token %}
+		<div class="mx-auto" style="width: 400px;">
+			<div class="col-xs-8 col-xs-offset-4">
+				<h2 style="text-align:center;">SIGN UP</h2>
+			</div>
+			<hr />
+
+            <div class="form-group">
+				<label for="FName">First Name</label>
+				<input type="text" class="form-control" name="FName" id="FName" placeholder="First Name"
+					Required>
+			</div>
+            <div class="form-group">
+				<label for="LName">Last name</label>
+				<input type="text" class="form-control" name="LName" id="LName" placeholder="Last name"
+					Required>
+			</div>
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" class="form-control" name="username" id="username" placeholder="Username"
+					Required>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" name="password" id="password" placeholder="Password"
+					Required>
+			</div>
+			<div class="form-group">
+				<label for="confirm">Confirm Password</label>
+				<input type="password" class="form-control" name="confirm" id="confirm"
+					placeholder="Re-Enter Password" Required>
+			</div>
+			<button type="submit" href='' class="btn btn-primary">Sign Up</button>
+		</div>
+		<div class="form-group">
+			{% for message in messages %}
+			<div class="alert alert-danger" role="alert">
+				{{message}}
+			</div>
+			{% endfor %}
+		</div>
+	</form>
+
+</body>
+
+</html>

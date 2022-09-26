@@ -1,0 +1,33 @@
+<head>
+    <style>
+        form{
+            border:4px solid black;
+            margin: 0 auto;
+            padding: 40px;
+            width: fit-content;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous"0>
+    
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color:#343a40;">
+    <a class="navbar-brand" href=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/forum/"><FONT COLOR="White">Go Back</FONT></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<form action="{% url 'replyPost' postID=id%}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" href="forum" class="btn btn-success" value="Submit">
+</form>
