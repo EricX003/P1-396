@@ -21,12 +21,6 @@ class NewIndicator(models.Model):
     user_ID = models.ForeignKey(User, on_delete=models.CASCADE)
     newPost = models.BooleanField(default=False)
 
-class Category(models.Model):
-    title = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.title
-
 class forum(models.Model):
     
     views = models.IntegerField(default = 0, editable = False)
@@ -48,10 +42,6 @@ class Discussion(models.Model):
         return str(self.forum)
 
 class Media(models.Model):
-
-    class Meta:
-        verbose_name = 'media'
-        verbose_name_plural = 'media'
     
     file = models.FileField(null=False, blank=False)
     description = models.TextField()

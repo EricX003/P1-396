@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <FONT COLOR="White">
+                    Hi, {{user.first_name}}!
+                  </FONT>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="logout"><FONT COLOR="White">Log out</FONT></a>
+              </li>
+              {%if newPost%}
+                <li class="nav-item">
+                  <a class="nav-link" href="forum">
+                    <FONT COLOR="White">
+                      <b>
+                        New post added! Click here to view!
+                      </b>
+                    </FONT>
+                  </a>
+                </li>
+              {%else%}
+                <li class="nav-item">
+                  <a class="nav-link" href="forum"><FONT COLOR="White">Forum</FONT></a>
+                </li>
+              {%endif%}
+              <li class="nav-item">
+                <a class="nav-link" href="media"><FONT COLOR="White">Media</FONT></a>
+              </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="register"><FONT COLOR="White">New Here? Sign Up!</FONT></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login"><FONT COLOR="White">Already a User? Log In!</FONT></a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+      <h3>
+        Welcome to the forum!
+        <br>
+        <br>
+        Calendar:
+      </h3>
+      <iframe src="https://calendar.google.com/calendar/embed?src=eric.xing6934%40gmail.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</body>
+</html>

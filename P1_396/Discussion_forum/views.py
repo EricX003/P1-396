@@ -35,7 +35,7 @@ def uploadFiles(request):
         for curfile in files:
             file = Media.objects.create(
                 description = data,
-                file = curfile
+                file = curfile,
             )
             file.save()
 
